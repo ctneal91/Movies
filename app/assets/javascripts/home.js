@@ -1,10 +1,11 @@
 function Films () {;
   $.getJSON("/movies.json").then(function(movies){;
-    var low = _.filter(movies, function (movie){;
+    var low = _.filter(movies, function(movie){;
       return movie.budget <= 80;
     });
+    $("#low-budgets").html(low);
   });
-  $("#low-budgets").html(low);
+
 };
 
 
