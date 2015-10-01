@@ -3,13 +3,22 @@ function Films () {;
 
     var movies = jsonData.movies
 
-    var low = _.filter(movies, function(movie){
+    var low = movies.filter(function(movie){
          return movie.budget <= 80;
     });
-    // var bestMovies = _.filter(movies,)
-    $("#low-budgets").html(low);
 
+    var lowTitles = low.map(function(movie){
+        console.log(movie.title);
+        return movie.title;
     });
+    console.log(lowTitles);
+    // var bestMovies = _.filter(movies,)
+    lowTitles.forEach(function(movie){
+      var pTag = "<p>" + movie + "</p>";
+      $("#low-budgets").append(pTag)
+    })
+
+  });
 
 };
 
